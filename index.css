@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap');
+
+:root{
+    --main-bg:hsl(30, 38%, 92%);
+    --btn:hsl(158, 36%, 37%);
+    --btn-hover:hsl(158, 36%, 20%);
+    --content-bg:hsl(0, 0%, 100%);
+    --product-desc:hsl(228, 12%, 48%);
+    --product-title:hsl(212, 21%, 14%);
+    --primary-font:'Montserrat',sans-serif;
+    --secondary-font:'Fraunces', serif;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body{
+    display: grid;
+    font-family: var(--primary-font);
+    font-size: 14px;
+    background-color: var(--main-bg);
+}
+
+img,picture,svg{
+    display: block;
+    max-width: 100%;
+}
+main{    
+    display: grid;
+    place-items: center;
+    margin: 1rem;
+    background-color: var(--content-bg);
+    overflow: hidden;
+    border-radius:1rem;
+    place-self: center;
+    max-width: 600px;
+    
+}
+
+h3{
+    color: var(--product-desc);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: .8rem;
+}
+
+p{
+    color: var(--product-desc);
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.product-info-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+h1{
+    font-size: 1.7rem;
+    font-family: var(--secondary-font);
+}
+
+div{
+    font-family: var(--secondary-font);
+}
+
+button{
+    border-radius: 0.7rem;
+    padding: 1rem;
+    background-color: var(--btn);
+    color: var(--content-bg);
+    border: none;
+    font-weight: 700;
+    display: inline-flex;
+    justify-content: center;
+    gap: 0.7rem;
+    cursor: pointer;
+}
+
+button::before{
+    content: '';
+    background-image: url(./images/icon-cart.svg);
+    width: 15px;
+    height: 16px;
+}
+
+button:hover{
+    background-color: var(--btn-hover);
+}
+
+.price-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.actual-price{
+    text-decoration: line-through;
+    color: var(--product-desc);
+    font-family: var(--primary-font);
+}
+
+@media(min-width:606px){
+    main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.discounted-price{
+    color: var(--btn);
+    font-size: 2rem;
+}
